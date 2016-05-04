@@ -2,12 +2,28 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Document</title>
+	<title>ngMadLibs</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
 </head>
 <body>
-<p>{{female name}} was a {{job title}} who loved technology. Although she loved parts of her job, she absolutely hated  {{tedious task}} and {{dirty task}}. So, {{female_name}} met with her life mentor {{celebrity}} who told her to learn how to {{useless skill}} with Thinkful. Thinkful didn't offer a course on {{useless skill}} so she studied programming instead.</p>
+	<main>
+		<header>
+			<img src="img/mad-lib-happy-face.png" alt="happy face">
+			<img src="img/ng-mad-libs-logo.png" alt="logo">
+		</header>
+		<section id="input">
+			<h1>Provided the following words:</h1>
+			<div class="input__fields">
+				<div>
+					<input type="text" value="{{female name}}">
+				</div>
+			</div>
+		</section>
+		<section id="text">
+			<p>{{female name}} was a {{job title}} who loved technology. Although she loved parts of her job, she absolutely hated {{tedious task}} and {{dirty task}}. So, {{female name}} met with her life mentor {{celebrity}} who told her to learn how to {{useless skill}} with Thinkful. Thinkful didn't offer a course on {{useless skill}} so she studied programming instead.</p>
 
-<p>What a great decision! With her new skills, {{female name}} built a(n) {{adjective}} robot named {{obnoxiuous celbertity}} that not only loved {{dirty task}} but did it {{huge number}} faster.</p>
-</p>
+			<p>What a great decision! With her new skills, {{female name}} built a(n) {{adjective}} robot named {{obnoxious celebrity}} that not only loved {{dirty task}} but did it {{huge number}} faster.</p>
+		</section>
+	</main>
 </body>
 </html>
