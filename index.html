@@ -16,12 +16,14 @@
 			<h1>Provided the following words:</h1>
 			<div class="input__fields">
 				<div>
-					<input type="text" ng-init="femaleName='Sarah'" value="Female name" ng-model="femaleName">
+					<input type="text" ng-init="femaleName='Sarah'" value="Female name" ng-model="femaleName" />
 				</div>
 			</div>
+			<input type="radio" name="gender" value="male" ng-model="gender" ng-click="updateText()" checked="checked" /> male
+			<input type="radio" name="gender" value="female" ng-model="gender" ng-click="updateText()" /> female
 		</section>
 		<section id="text">
-			<p>{{femaleName}} was a {{job-title}} who loved technology. Although she loved parts of her job, she absolutely hated {{tedious-task}} and {{dirty-task}}. So, {{femaleName}} met with her life mentor {{celebrity}} who told her to learn how to {{useless-skill}} with Thinkful. Thinkful didn't offer a course on {{useless-skill}} so she studied programming instead.</p>
+			<p>{{gender}}, {{femaleName}} was a {{job-title}} who loved technology. Although she loved parts of {{genderTextHisHer}} job, she absolutely hated {{tedious-task}} and {{dirty-task}}. So, {{femaleName}} met with her life mentor {{celebrity}} who told her to learn how to {{useless-skill}} with Thinkful. Thinkful didn't offer a course on {{useless-skill}} so she studied programming instead.</p>
 
 			<p>What a great decision! With her new skills, {{female-name}} built a(n) {{adjective}} robot named {{obnoxious-celebrity}} that not only loved {{dirty-task}} but did it {{huge-number}} faster.</p>
 		</section>
