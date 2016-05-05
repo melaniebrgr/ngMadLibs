@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="myApp">
 <head>
 	<meta charset="UTF-8">
 	<title>ngMadLibs</title>
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+	<script data-require="angular.js@1.3.10" data-semver="1.3.10" src="https://code.angularjs.org/1.3.10/angular.js"></script>
+	<script src="js/main.js"></script>
 </head>
 <body>
-	<main>
+	<main ng-controller="myController">
 		<header>
 			<img src="img/mad-lib-happy-face.png" alt="happy face">
 			<img src="img/ng-mad-libs-logo.png" alt="logo">
@@ -15,14 +16,14 @@
 			<h1>Provided the following words:</h1>
 			<div class="input__fields">
 				<div>
-					<input type="text" value="{{female name}}">
+					<input type="text" ng-init="femaleName='Sarah'" value="Female name" ng-model="femaleName">
 				</div>
 			</div>
 		</section>
 		<section id="text">
-			<p>{{female name}} was a {{job title}} who loved technology. Although she loved parts of her job, she absolutely hated {{tedious task}} and {{dirty task}}. So, {{female name}} met with her life mentor {{celebrity}} who told her to learn how to {{useless skill}} with Thinkful. Thinkful didn't offer a course on {{useless skill}} so she studied programming instead.</p>
+			<p>{{femaleName}} was a {{job-title}} who loved technology. Although she loved parts of her job, she absolutely hated {{tedious-task}} and {{dirty-task}}. So, {{femaleName}} met with her life mentor {{celebrity}} who told her to learn how to {{useless-skill}} with Thinkful. Thinkful didn't offer a course on {{useless-skill}} so she studied programming instead.</p>
 
-			<p>What a great decision! With her new skills, {{female name}} built a(n) {{adjective}} robot named {{obnoxious celebrity}} that not only loved {{dirty task}} but did it {{huge number}} faster.</p>
+			<p>What a great decision! With her new skills, {{female-name}} built a(n) {{adjective}} robot named {{obnoxious-celebrity}} that not only loved {{dirty-task}} but did it {{huge-number}} faster.</p>
 		</section>
 	</main>
 </body>
