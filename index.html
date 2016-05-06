@@ -2,7 +2,8 @@
 <html lang="en" ng-app="myApp">
 <head>
 	<meta charset="UTF-8">
-	<title>ngMadLibs</title>
+	<title>ngMadLibs {{version}}</title>
+	<link rel="stylesheet" href="css/styles.css">
 	<script data-require="angular.js@1.3.10" data-semver="1.3.10" src="https://code.angularjs.org/1.3.10/angular.js"></script>
 	<script src="js/main.js"></script>
 </head>
@@ -12,20 +13,29 @@
 			<img src="img/mad-lib-happy-face.png" alt="happy face">
 			<img src="img/ng-mad-libs-logo.png" alt="logo">
 		</header>
-		<section id="input">
-			<h1>Provided the following words:</h1>
-			<div class="input__fields">
-				<div>
-					<input type="text" ng-init="femaleName='Sarah'" value="Female name" ng-model="femaleName" />
-				</div>
-			</div>
+		<section id="defaults">
 			<input type="radio" name="gender" value="male" ng-model="gender" ng-click="updateText()" checked="checked" /> male
 			<input type="radio" name="gender" value="female" ng-model="gender" ng-click="updateText()" /> female
 		</section>
+		<section id="input">
+			<h1>Provided random word</h1>
+			<div class="input__fields">
+				<span><input type="text" ng-init="femaleName='Female Name'" value="female name" ng-model="femaleName"></span>
+				<span><input type="text" ng-init="jobTitle='job title'" value="job title" ng-model="jobTitle"></span>
+				<span><input type="text" ng-init="tediousTask='tedious task'" value="tedious task" ng-model="tediousTask"></span>
+				<span><input type="text" ng-init="celebrity='celebrity'" value="celebrity" ng-model="celebrity"></span>
+				<span><input type="text" ng-init="uselessSkill='useless skill'" value="useless skill" ng-model="uselessSkill"></span>
+				<span><input type="text" ng-init="adjective='adjective'" value="adjective" ng-model="adjective"></span>
+				<span><input type="text" ng-init="obnoxiousCelebrity='obnoxious celebrity'" value="obnoxious celebrity" ng-model="obnoxiousCelebrity"></span>
+				<span><input type="text" ng-init="dirtyTask='dirty task'" value="dirty task" ng-model="dirtyTask"></span>
+				<span><input type="text" ng-init="hugeNumber='huge number'" value="huge number" ng-model="hugeNumber"></span>
+			</div>
+		</section>
 		<section id="text">
-			<p>{{gender}}, {{femaleName}} was a {{job-title}} who loved technology. Although she loved parts of {{genderTextHisHer}} job, she absolutely hated {{tedious-task}} and {{dirty-task}}. So, {{femaleName}} met with her life mentor {{celebrity}} who told her to learn how to {{useless-skill}} with Thinkful. Thinkful didn't offer a course on {{useless-skill}} so she studied programming instead.</p>
+			<h1>Mad Libs</h1>
+			<p>{{femaleName}} was a {{jobTitle}} who loved technology. Although {{genderTextHeShe}} loved parts of {{genderTextHisHer}} job, {{genderTextHeShe}} absolutely hated {{tediousTask}} and {{dirtyTask}}. So, {{femaleName}} met with {{genderTextHisHer}} life mentor {{celebrity}} who told {{genderTextHisHer}} to learn how to {{uselessSkill}} with Thinkful. Thinkful didn't offer a course on {{uselessSkill}} so {{genderTextHeShe}} studied programming instead.</p>
 
-			<p>What a great decision! With her new skills, {{female-name}} built a(n) {{adjective}} robot named {{obnoxious-celebrity}} that not only loved {{dirty-task}} but did it {{huge-number}} faster.</p>
+			<p>What a great decision! With {{genderTextHisHer}} new skills, {{femaleName}} built a(n) {{adjective}} robot named {{obnoxiousCelebrity}} that not only loved {{dirtyTask}} but did it {{hugeNumber}} faster.</p>
 		</section>
 	</main>
 </body>
