@@ -1,0 +1,73 @@
+html {
+	height: 100%;
+	font-size: 16px;
+	box-sizing: border-box;
+	background-color: #D1474B;
+	font-family: sans-serif;
+}
+
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
+textarea:focus, input:focus{
+    outline: none;
+}
+
+h1 {
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-size: small;
+}
+
+section {
+	margin: 2em auto;
+}
+
+main {
+	width: 90%;
+	margin: 2em auto;
+	padding: 1.5em;
+	box-shadow: 12px 12px 0px 0px rgba(0,0,0,0.2);
+	background-color: white;
+}
+
+header img {
+	float: left;
+}
+header img:first-child {
+	width: 20%;
+}
+header img:last-child {
+	width: 80%;
+}
+
+header:after {
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: " ";
+	clear: both;
+	height: 0;
+}
+
+#input div.input__fields span {
+	display: inline-block;  
+    background-color: yellow;
+    padding: 0.2em;
+    transform: skewY(3deg);
+    margin: 0.3em;
+}
+
+#input div.input__fields input {
+	position: relative;
+	background: none;
+	text-align: center;
+	border: none;
+	font-size: 1.1em;
+	margin: 0.4em;
+    transform: skewY(-3deg);
+    font-weight: bold;
+}
+
