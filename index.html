@@ -20,7 +20,7 @@
 		<section id="input">
 			<h1>Provided random word</h1>
 			<div class="input__fields">
-				<span><input type="text" ng-init="femaleName='Female Name'" value="female name" ng-model="femaleName"></span>
+				<span><input type="text" ng-init="genderTextMaleFemaleName='Male Name'" value={{genderTextMaleFemaleName}} ng-model="genderTextMaleFemaleName"></span>
 				<span><input type="text" ng-init="jobTitle='job title'" value="job title" ng-model="jobTitle"></span>
 				<span><input type="text" ng-init="tediousTask='tedious task'" value="tedious task" ng-model="tediousTask"></span>
 				<span><input type="text" ng-init="celebrity='celebrity'" value="celebrity" ng-model="celebrity"></span>
@@ -33,9 +33,9 @@
 		</section>
 		<section id="text">
 			<h1>Mad Libs</h1>
-			<p>{{femaleName}} was a {{jobTitle}} who loved technology. Although {{genderTextHeShe}} loved parts of {{genderTextHisHer}} job, {{genderTextHeShe}} absolutely hated {{tediousTask}} and {{dirtyTask}}. So, {{femaleName}} met with {{genderTextHisHer}} life mentor {{celebrity}} who told {{genderTextHisHer}} to learn how to {{uselessSkill}} with Thinkful. Thinkful didn't offer a course on {{uselessSkill}} so {{genderTextHeShe}} studied programming instead.</p>
+			<p>{{genderTextMaleFemaleName}} was a {{jobTitle}} who loved technology. Although {{genderTextHeShe}} loved parts of {{genderTextHisHer}} job, {{genderTextHeShe}} absolutely hated {{tediousTask}} and {{dirtyTask}}. So, {{genderTextMaleFemaleName}} met with {{genderTextHisHer}} life mentor {{celebrity}} who told {{genderTextHisHer}} to learn how to {{uselessSkill}} with Thinkful. Thinkful didn't offer a course on {{uselessSkill}} so {{genderTextHeShe}} studied programming instead.</p>
 
-			<p>What a great decision! With {{genderTextHisHer}} new skills, {{femaleName}} built a(n) {{adjective}} robot named {{obnoxiousCelebrity}} that not only loved {{dirtyTask}} but did it {{hugeNumber}} faster.</p>
+			<p>What a great decision! With {{genderTextHisHer}} new skills, {{genderTextMaleFemaleName}} built a(n) {{adjective}} robot named {{obnoxiousCelebrity}} that not only loved {{dirtyTask}} but did it {{hugeNumber}} faster.</p>
 		</section>
 	</main>
 </body>

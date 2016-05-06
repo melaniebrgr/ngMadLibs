@@ -4,17 +4,20 @@ angular.module('myApp', [])
 		$scope.genderText = {
 			male: {
 				hisHer: 'his',
-				heShe: 'he'
+				heShe: 'he',
+				maleFemaleName: 'Male Name'
 			},
 			female: {
 				hisHer: 'her',
-				heShe: 'she'
+				heShe: 'she',
+				maleFemaleName: 'Female Name'
 			}
 		};
 		
 		$scope.updateText = function() {
 			$scope.genderTextHisHer = $scope.genderText[$scope.gender]['hisHer'];
 			$scope.genderTextHeShe = $scope.genderText[$scope.gender]['heShe'];
+			$scope.genderTextMaleFemaleName = $scope.genderText[$scope.gender]['maleFemaleName'];
 		}
 		$scope.updateText();
 	})
