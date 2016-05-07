@@ -1,5 +1,6 @@
 angular.module('myApp', [])
 	.controller('myController', function myController($scope) {
+		$scope.showMadLibs = false;
 		$scope.gender = "male";
 		$scope.genderText = {
 			male: {

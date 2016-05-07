@@ -13,29 +13,33 @@
 			<img src="img/mad-lib-happy-face.png" alt="happy face">
 			<img src="img/ng-mad-libs-logo.png" alt="logo">
 		</header>
-		<section id="defaults">
-			<input type="radio" name="gender" value="male" ng-model="gender" ng-click="updateText()" checked="checked" /> male
-			<input type="radio" name="gender" value="female" ng-model="gender" ng-click="updateText()" /> female
-		</section>
 		<section id="input">
-			<h1>Provided random word</h1>
-			<div class="input__fields">
-				<span><input type="text" ng-init="genderTextMaleFemaleName='Male Name'" value={{genderTextMaleFemaleName}} ng-model="genderTextMaleFemaleName"></span>
-				<span><input type="text" ng-init="jobTitle='job title'" value="job title" ng-model="jobTitle"></span>
-				<span><input type="text" ng-init="tediousTask='tedious task'" value="tedious task" ng-model="tediousTask"></span>
-				<span><input type="text" ng-init="celebrity='celebrity'" value="celebrity" ng-model="celebrity"></span>
-				<span><input type="text" ng-init="uselessSkill='useless skill'" value="useless skill" ng-model="uselessSkill"></span>
-				<span><input type="text" ng-init="adjective='adjective'" value="adjective" ng-model="adjective"></span>
-				<span><input type="text" ng-init="obnoxiousCelebrity='obnoxious celebrity'" value="obnoxious celebrity" ng-model="obnoxiousCelebrity"></span>
-				<span><input type="text" ng-init="dirtyTask='dirty task'" value="dirty task" ng-model="dirtyTask"></span>
-				<span><input type="text" ng-init="hugeNumber='huge number'" value="huge number" ng-model="hugeNumber"></span>
-			</div>
+			<h1>Provide a random word</h1>
+			<form name="mlForm">
+				<div class="input__defaults">
+					<input type="radio" name="gender" value="male" ng-model="gender" ng-click="updateText()" checked="checked" /> male
+					<input type="radio" name="gender" value="female" ng-model="gender" ng-click="updateText()" /> female
+				</div>			
+				<div class="input__fields">
+					<span><input type="text" ng-init="genderTextMaleFemaleName='Male Name'" placeholder="{{genderTextMaleFemaleName}}" ng-model="genderTextMaleFemaleName"></span>
+					<span><input type="text" ng-init="jobTitle='job title'" placeholder="{{jobTitle}}" ng-model="jobTitle"></span>
+					<span><input type="text" ng-init="tediousTask='tedious task'" placeholder="{{tediousTask}}" ng-model="tediousTask"></span>
+					<span><input type="text" ng-init="celebrity='celebrity'" placeholder="{{celebrity}}" ng-model="celebrity"></span>
+					<span><input type="text" ng-init="uselessSkill='useless skill'" placeholder="{{uselessSkill}}" ng-model="uselessSkill"></span>
+					<span><input type="text" ng-init="adjective='adjective'" placeholder="{{adjective}}" ng-model="adjective"></span>
+					<span><input type="text" ng-init="obnoxiousCelebrity='obnoxious celebrity'" placeholder="{{obnoxiousCelebrity}}" ng-model="obnoxiousCelebrity"></span>
+					<span><input type="text" ng-init="dirtyTask='dirty task'" placeholder="{{dirtyTask}}" ng-model="dirtyTask"></span>
+					<span><input type="text" ng-init="hugeNumber='huge number'" placeholder="{{hugeNumber}}" ng-model="hugeNumber"></span>
+				</div>
+				<button ng-click="showMadLibs=!showMadLibs">Generate Mad Libs</button>
+			</form>
 		</section>
 		<section id="text">
 			<h1>Mad Libs</h1>
 			<p>{{genderTextMaleFemaleName}} was a {{jobTitle}} who loved technology. Although {{genderTextHeShe}} loved parts of {{genderTextHisHer}} job, {{genderTextHeShe}} absolutely hated {{tediousTask}} and {{dirtyTask}}. So, {{genderTextMaleFemaleName}} met with {{genderTextHisHer}} life mentor {{celebrity}} who told {{genderTextHisHer}} to learn how to {{uselessSkill}} with Thinkful. Thinkful didn't offer a course on {{uselessSkill}} so {{genderTextHeShe}} studied programming instead.</p>
 
 			<p>What a great decision! With {{genderTextHisHer}} new skills, {{genderTextMaleFemaleName}} built a(n) {{adjective}} robot named {{obnoxiousCelebrity}} that not only loved {{dirtyTask}} but did it {{hugeNumber}} faster.</p>
+			<button ng-click="showMadLibs=!showMadLibs">Start Over</button>
 		</section>
 	</main>
 </body>
