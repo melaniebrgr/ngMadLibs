@@ -1,5 +1,6 @@
 angular.module('myApp', [])
 	.controller('myController', function myController($scope) {
+		$scope.master = {};
 		$scope.showMadLibs = false;
 		$scope.libs = {
 			jobTitle: 'job title',
@@ -11,6 +12,7 @@ angular.module('myApp', [])
 			dirtyTask: 'dirty task',
 			hugeNumber: 'huge number'
 		}
+
 		$scope.gender = "male";
 		$scope.genderText = {
 			male: {
@@ -37,8 +39,14 @@ angular.module('myApp', [])
 		};
 
 		$scope.reset = function() {
+			$scope.gender = "male";
+			$scope.updateText();
+			var input_fields = Array.from(document.getElementsByClassName('input__fields')[0].querySelectorAll('input'));
+			input_fields.forEach(function(el, i) {
+				$scope.libs[el.name] = el.placeholder;
+			});
 			$scope.showMadLibs = false;
-		}
+		};
 	})
 	.constant('VERSION', 1.0)
 	.run(function(VERSION, $rootScope) {

@@ -15,7 +15,7 @@
 		</header>
 		<section id="input" ng-show="!showMadLibs">
 			<h1>Provide a random word</h1>
-			<form name="madLibsForm" novalidate ng-submit="submit()">
+			<form id="madLibsForm" name="madLibsForm" novalidate ng-submit="submit()">
 				<div class="input__defaults">
 					<input type="radio" name="gender" value="male" ng-model="gender" ng-click="updateText()" checked="checked" /> male
 					<input type="radio" name="gender" value="female" ng-model="gender" ng-click="updateText()" /> female
@@ -29,7 +29,7 @@
 					<span><input type="text" name="adjective" placeholder="adjective" ng-model="libs.adjective" required></span>
 					<span><input type="text" name="obnoxiousCelebrity" placeholder="obnoxious celebrity" ng-model="libs.obnoxiousCelebrity" required></span>
 					<span><input type="text" name="dirtyTask" placeholder="dirty task" ng-model="libs.dirtyTask" required></span>
-					<span><input type="number" name="hugeNumber" placeholder="huge number" ng-model="libs.hugeNumber" required></span>
+					<span><input type="text" name="hugeNumber" placeholder="huge number" ng-model="libs.hugeNumber" required></span>
 				</div>
 				<div class="input__error" ng-if="madLibsForm.$submitted && madLibsForm.$invalid">
 					<span ng-if="madLibsForm.name.$error.required">Provide a name</span>

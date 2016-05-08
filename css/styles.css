@@ -30,6 +30,7 @@ button {
     text-transform: uppercase;
     letter-spacing: 0.12em;
     float: right;
+    margin-top: 1em;
 }
 
 button:hover {
