@@ -13,28 +13,28 @@
 			<img src="img/mad-lib-happy-face.png" alt="happy face">
 			<img src="img/ng-mad-libs-logo.png" alt="logo">
 		</header>
-		<section id="input">
+		<section id="input" ng-show="!showMadLibs">
 			<h1>Provide a random word</h1>
-			<form name="mlForm">
+			<form name="random-words-form">
 				<div class="input__defaults">
 					<input type="radio" name="gender" value="male" ng-model="gender" ng-click="updateText()" checked="checked" /> male
 					<input type="radio" name="gender" value="female" ng-model="gender" ng-click="updateText()" /> female
 				</div>			
 				<div class="input__fields">
-					<span><input type="text" ng-init="genderTextMaleFemaleName='Male Name'" placeholder="{{genderTextMaleFemaleName}}" ng-model="genderTextMaleFemaleName"></span>
-					<span><input type="text" ng-init="jobTitle='job title'" placeholder="{{jobTitle}}" ng-model="jobTitle"></span>
-					<span><input type="text" ng-init="tediousTask='tedious task'" placeholder="{{tediousTask}}" ng-model="tediousTask"></span>
-					<span><input type="text" ng-init="celebrity='celebrity'" placeholder="{{celebrity}}" ng-model="celebrity"></span>
-					<span><input type="text" ng-init="uselessSkill='useless skill'" placeholder="{{uselessSkill}}" ng-model="uselessSkill"></span>
-					<span><input type="text" ng-init="adjective='adjective'" placeholder="{{adjective}}" ng-model="adjective"></span>
-					<span><input type="text" ng-init="obnoxiousCelebrity='obnoxious celebrity'" placeholder="{{obnoxiousCelebrity}}" ng-model="obnoxiousCelebrity"></span>
-					<span><input type="text" ng-init="dirtyTask='dirty task'" placeholder="{{dirtyTask}}" ng-model="dirtyTask"></span>
-					<span><input type="text" ng-init="hugeNumber='huge number'" placeholder="{{hugeNumber}}" ng-model="hugeNumber"></span>
+					<span><input type="text" ng-init="genderTextMaleFemaleName='Male Name'" placeholder="{{genderTextMaleFemaleName}}" ng-model="genderTextMaleFemaleName" required></span>
+					<span><input type="text" ng-init="jobTitle='job title'" placeholder="{{jobTitle}}" ng-model="jobTitle" required></span>
+					<span><input type="text" ng-init="tediousTask='tedious task'" placeholder="{{tediousTask}}" ng-model="tediousTask" required></span>
+					<span><input type="text" ng-init="celebrity='celebrity'" placeholder="{{celebrity}}" ng-model="celebrity" required></span>
+					<span><input type="text" ng-init="uselessSkill='useless skill'" placeholder="{{uselessSkill}}" ng-model="uselessSkill" required></span>
+					<span><input type="text" ng-init="adjective='adjective'" placeholder="{{adjective}}" ng-model="adjective" required></span>
+					<span><input type="text" ng-init="obnoxiousCelebrity='obnoxious celebrity'" placeholder="{{obnoxiousCelebrity}}" ng-model="obnoxiousCelebrity" required></span>
+					<span><input type="text" ng-init="dirtyTask='dirty task'" placeholder="{{dirtyTask}}" ng-model="dirtyTask" required></span>
+					<span><input type="text" ng-init="hugeNumber='huge number'" placeholder="{{hugeNumber}}" ng-model="hugeNumber" required></span>
 				</div>
-				<button ng-click="showMadLibs=!showMadLibs">Generate Mad Libs</button>
+				<button type="submit" ng-click="showMadLibs=!showMadLibs">Generate Mad Libs</button>
 			</form>
 		</section>
-		<section id="text">
+		<section id="text" ng-show="showMadLibs">
 			<h1>Mad Libs</h1>
 			<p>{{genderTextMaleFemaleName}} was a {{jobTitle}} who loved technology. Although {{genderTextHeShe}} loved parts of {{genderTextHisHer}} job, {{genderTextHeShe}} absolutely hated {{tediousTask}} and {{dirtyTask}}. So, {{genderTextMaleFemaleName}} met with {{genderTextHisHer}} life mentor {{celebrity}} who told {{genderTextHisHer}} to learn how to {{uselessSkill}} with Thinkful. Thinkful didn't offer a course on {{uselessSkill}} so {{genderTextHeShe}} studied programming instead.</p>
 
