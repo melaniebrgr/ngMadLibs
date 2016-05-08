@@ -1,6 +1,16 @@
 angular.module('myApp', [])
 	.controller('myController', function myController($scope) {
 		$scope.showMadLibs = false;
+		$scope.libs = {
+			jobTitle: 'job title',
+			tediousTask: 'tedious task',
+			celebrity: 'celebrity',
+			uselessSkill: 'useless skill',
+			adjective: 'adjective',
+			obnoxiousCelebrity: 'obnoxious celebrity',
+			dirtyTask: 'dirty task',
+			hugeNumber: 'huge number'
+		}
 		$scope.gender = "male";
 		$scope.genderText = {
 			male: {
@@ -21,6 +31,14 @@ angular.module('myApp', [])
 			$scope.genderTextMaleFemaleName = $scope.genderText[$scope.gender]['maleFemaleName'];
 		}
 		$scope.updateText();
+
+		$scope.submit = function() {
+			if ($scope.madLibsForm.$valid) $scope.showMadLibs = true;
+		};
+
+		$scope.reset = function() {
+			$scope.showMadLibs = false;
+		}
 	})
 	.constant('VERSION', 1.0)
 	.run(function(VERSION, $rootScope) {
