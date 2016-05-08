@@ -31,7 +31,6 @@
 					<span><input type="text" name="dirtyTask" placeholder="dirty task" ng-model="libs.dirtyTask" required></span>
 					<span><input type="number" name="hugeNumber" placeholder="huge number" ng-model="libs.hugeNumber" required></span>
 				</div>
-				<button type="submit">Generate Mad Libs</button>
 				<div class="input__error" ng-if="madLibsForm.$submitted && madLibsForm.$invalid">
 					<span ng-if="madLibsForm.name.$error.required">Provide a name</span>
 					<span ng-if="madLibsForm.jobTitle.$error.required">Provide a job title</span>
@@ -44,6 +43,7 @@
 					<span ng-if="madLibsForm.hugeNumber.$error.required">Provide a huge number</span>
 					<span ng-if="madLibsForm.hugeNumber.$error.number">Must be a valid number</span>
 				</div>
+				<button type="submit">Generate Mad Libs</button>
 			</form>
 		</section>
 		<section id="text" ng-show="showMadLibs">
