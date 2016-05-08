@@ -15,31 +15,43 @@
 		</header>
 		<section id="input" ng-show="!showMadLibs">
 			<h1>Provide a random word</h1>
-			<form name="random-words-form">
+			<form name="madLibsForm" novalidate ng-submit="submit()">
 				<div class="input__defaults">
 					<input type="radio" name="gender" value="male" ng-model="gender" ng-click="updateText()" checked="checked" /> male
 					<input type="radio" name="gender" value="female" ng-model="gender" ng-click="updateText()" /> female
 				</div>			
 				<div class="input__fields">
-					<span><input type="text" ng-init="genderTextMaleFemaleName='Male Name'" placeholder="{{genderTextMaleFemaleName}}" ng-model="genderTextMaleFemaleName" required></span>
-					<span><input type="text" ng-init="jobTitle='job title'" placeholder="{{jobTitle}}" ng-model="jobTitle" required></span>
-					<span><input type="text" ng-init="tediousTask='tedious task'" placeholder="{{tediousTask}}" ng-model="tediousTask" required></span>
-					<span><input type="text" ng-init="celebrity='celebrity'" placeholder="{{celebrity}}" ng-model="celebrity" required></span>
-					<span><input type="text" ng-init="uselessSkill='useless skill'" placeholder="{{uselessSkill}}" ng-model="uselessSkill" required></span>
-					<span><input type="text" ng-init="adjective='adjective'" placeholder="{{adjective}}" ng-model="adjective" required></span>
-					<span><input type="text" ng-init="obnoxiousCelebrity='obnoxious celebrity'" placeholder="{{obnoxiousCelebrity}}" ng-model="obnoxiousCelebrity" required></span>
-					<span><input type="text" ng-init="dirtyTask='dirty task'" placeholder="{{dirtyTask}}" ng-model="dirtyTask" required></span>
-					<span><input type="text" ng-init="hugeNumber='huge number'" placeholder="{{hugeNumber}}" ng-model="hugeNumber" required></span>
+					<span><input type="text" name="name" placeholder="Male name" ng-model="genderTextMaleFemaleName" required></span>
+					<span><input type="text" name="jobTitle" placeholder="job title" ng-model="libs.jobTitle" required></span>
+					<span><input type="text" name="tediousTask" placeholder="tedious task" ng-model="libs.tediousTask" required></span>
+					<span><input type="text" name="celebrity" placeholder="celebrity" ng-model="libs.celebrity" required></span>
+					<span><input type="text" name="uselessSkill" placeholder="useless skill" ng-model="libs.uselessSkill" required></span>
+					<span><input type="text" name="adjective" placeholder="adjective" ng-model="libs.adjective" required></span>
+					<span><input type="text" name="obnoxiousCelebrity" placeholder="obnoxious celebrity" ng-model="libs.obnoxiousCelebrity" required></span>
+					<span><input type="text" name="dirtyTask" placeholder="dirty task" ng-model="libs.dirtyTask" required></span>
+					<span><input type="number" name="hugeNumber" placeholder="huge number" ng-model="libs.hugeNumber" required></span>
 				</div>
-				<button type="submit" ng-click="showMadLibs=!showMadLibs">Generate Mad Libs</button>
+				<button type="submit">Generate Mad Libs</button>
+				<div class="input__error" ng-if="madLibsForm.$submitted && madLibsForm.$invalid">
+					<span ng-if="madLibsForm.name.$error.required">Provide a name</span>
+					<span ng-if="madLibsForm.jobTitle.$error.required">Provide a job title</span>
+					<span ng-if="madLibsForm.tediousTask.$error.required">Provide a tedious task</span>
+					<span ng-if="madLibsForm.celebrity.$error.required">Provide a celebrity</span>
+					<span ng-if="madLibsForm.uselessSkill.$error.required">Provide a useless skill</span>
+					<span ng-if="madLibsForm.adjective.$error.required">Provide a adjective</span>
+					<span ng-if="madLibsForm.obnoxiousCelebrity.$error.required">Provide a obnoxious celebrity</span>
+					<span ng-if="madLibsForm.dirtyTask.$error.required">Provide a dirty task</span>
+					<span ng-if="madLibsForm.hugeNumber.$error.required">Provide a huge number</span>
+					<span ng-if="madLibsForm.hugeNumber.$error.number">Must be a valid number</span>
+				</div>
 			</form>
 		</section>
 		<section id="text" ng-show="showMadLibs">
 			<h1>Mad Libs</h1>
-			<p>{{genderTextMaleFemaleName}} was a {{jobTitle}} who loved technology. Although {{genderTextHeShe}} loved parts of {{genderTextHisHer}} job, {{genderTextHeShe}} absolutely hated {{tediousTask}} and {{dirtyTask}}. So, {{genderTextMaleFemaleName}} met with {{genderTextHisHer}} life mentor {{celebrity}} who told {{genderTextHisHer}} to learn how to {{uselessSkill}} with Thinkful. Thinkful didn't offer a course on {{uselessSkill}} so {{genderTextHeShe}} studied programming instead.</p>
+			<p>{{ genderTextMaleFemaleName }} was a {{ libs.jobTitle }} who loved technology. Although {{ genderTextHeShe }} loved parts of {{ genderTextHisHer }} job, {{ genderTextHeShe }} absolutely hated {{ libs.tediousTask }} and {{ libs.dirtyTask }}. So, {{ genderTextMaleFemaleName }} met with {{ genderTextHisHer }} life mentor {{ libs.celebrity }} who told {{ genderTextHisHer }} to learn how to {{ libs.uselessSkill }} with Thinkful. Thinkful didn't offer a course on {{ libs.uselessSkill }} so {{ libs.genderTextHeShe }} studied programming instead.</p>
 
-			<p>What a great decision! With {{genderTextHisHer}} new skills, {{genderTextMaleFemaleName}} built a(n) {{adjective}} robot named {{obnoxiousCelebrity}} that not only loved {{dirtyTask}} but did it {{hugeNumber}} faster.</p>
-			<button ng-click="showMadLibs=!showMadLibs">Start Over</button>
+			<p>What a great decision! With {{ genderTextHisHer }} new skills, {{ genderTextMaleFemaleName }} built a(n) {{ libs.adjective }} robot named {{ libs.obnoxiousCelebrity }} that not only loved {{ libs.dirtyTask }} but did it {{ libs.hugeNumber }} faster.</p>
+			<button ng-click="reset()">Start Over</button>
 		</section>
 	</main>
 </body>
