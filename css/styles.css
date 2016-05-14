@@ -109,4 +109,16 @@ header:after {
     margin-top: 1em;
 }
 
+section#input, section#text {
+	position: relative;
+	top: 0;
+	left: 0;
+}
 
+.fade {
+	opacity: 1;
+	transition: all linear 0.5s;
+}
+.fade.ng-hide {
+	opacity: 0;
+}

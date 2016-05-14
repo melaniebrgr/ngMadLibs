@@ -1,3 +1,5 @@
+var debug = true;
+
 angular.module('myApp', ['ngAnimate'])
 	.controller('myController', function myController($scope) {
 		$scope.master = {};
@@ -37,7 +39,18 @@ angular.module('myApp', ['ngAnimate'])
 			});
 			$scope.madLibsForm.$submitted = false;
 			$scope.showMadLibs = false;
+			if (debug) debug();
 		};
+
+		function debug() {
+			$scope.genderTextMaleFemaleName = 'TEST';
+			var input_fields = Array.from(document.getElementsByClassName('input__fields')[0].querySelectorAll('input'));
+			input_fields.forEach(function(el, i) {
+				$scope.libs[el.name] = "TEST";
+			});					
+		}
+
+		if (debug) debug();
 	})
 	.constant('VERSION', 1.0)
 	.run(function(VERSION, $rootScope) {

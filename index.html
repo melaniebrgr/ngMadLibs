@@ -14,7 +14,7 @@
 			<img src="img/mad-lib-happy-face.png" alt="happy face">
 			<img src="img/ng-mad-libs-logo.png" alt="logo">
 		</header>
-		<section id="input" ng-show="!showMadLibs">
+		<section id="input" class="fade" ng-show="!showMadLibs">
 			<h1>Provide a random word</h1>
 			<form id="madLibsForm" name="madLibsForm" novalidate ng-submit="submit()">
 				<div class="input__defaults">
@@ -47,7 +47,7 @@
 				<button type="submit">Generate Mad Libs</button>
 			</form>
 		</section>
-		<section id="text" ng-show="showMadLibs">
+		<section id="text" class="fade" ng-show="showMadLibs">
 			<h1>Mad Libs</h1>
 			<p>{{ genderTextMaleFemaleName }} was a {{ libs.jobTitle }} who loved technology. Although {{ genderTextHeShe }} loved parts of {{ genderTextHisHer }} job, {{ genderTextHeShe }} absolutely hated {{ libs.tediousTask }} and {{ libs.dirtyTask }}. So, {{ genderTextMaleFemaleName }} met with {{ genderTextHisHer }} life mentor {{ libs.celebrity }} who told {{ genderTextHisHer }} to learn how to {{ libs.uselessSkill }} with Thinkful. Thinkful didn't offer a course on {{ libs.uselessSkill }} so {{ genderTextHeShe }} studied programming instead.</p>
 
