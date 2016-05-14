@@ -5,6 +5,7 @@
 	<title>ngMadLibs {{version}}</title>
 	<link rel="stylesheet" href="css/styles.css">
 	<script data-require="angular.js@1.3.10" data-semver="1.3.10" src="https://code.angularjs.org/1.3.10/angular.js"></script>
+	<script type="text/javascript" src="https://code.angularjs.org/1.3.10/angular-animate.js"></script>
 	<script src="js/main.js"></script>
 </head>
 <body>
@@ -21,7 +22,7 @@
 					<input type="radio" name="gender" value="female" ng-model="gender" ng-click="updateText()" /> female
 				</div>			
 				<div class="input__fields">
-					<span><input type="text" name="name" placeholder="Male name" ng-model="genderTextMaleFemaleName" required></span>
+					<span><input type="text" name="name" placeholder="{{ gender }} name" ng-model="genderTextMaleFemaleName" required></span>
 					<span><input type="text" name="jobTitle" placeholder="job title" ng-model="libs.jobTitle" required></span>
 					<span><input type="text" name="tediousTask" placeholder="tedious task" ng-model="libs.tediousTask" required></span>
 					<span><input type="text" name="celebrity" placeholder="celebrity" ng-model="libs.celebrity" required></span>

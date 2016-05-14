@@ -1,17 +1,8 @@
-angular.module('myApp', [])
+angular.module('myApp', ['ngAnimate'])
 	.controller('myController', function myController($scope) {
 		$scope.master = {};
 		$scope.showMadLibs = false;
-		$scope.libs = {
-			jobTitle: 'job title',
-			tediousTask: 'tedious task',
-			celebrity: 'celebrity',
-			uselessSkill: 'useless skill',
-			adjective: 'adjective',
-			obnoxiousCelebrity: 'obnoxious celebrity',
-			dirtyTask: 'dirty task',
-			hugeNumber: 'huge number'
-		}
+		$scope.libs = {};
 
 		$scope.gender = "male";
 		$scope.genderText = {
@@ -30,7 +21,6 @@ angular.module('myApp', [])
 		$scope.updateText = function() {
 			$scope.genderTextHisHer = $scope.genderText[$scope.gender]['hisHer'];
 			$scope.genderTextHeShe = $scope.genderText[$scope.gender]['heShe'];
-			$scope.genderTextMaleFemaleName = $scope.genderText[$scope.gender]['maleFemaleName'];
 		}
 		$scope.updateText();
 
@@ -43,8 +33,9 @@ angular.module('myApp', [])
 			$scope.updateText();
 			var input_fields = Array.from(document.getElementsByClassName('input__fields')[0].querySelectorAll('input'));
 			input_fields.forEach(function(el, i) {
-				$scope.libs[el.name] = el.placeholder;
+				$scope.libs[el.name] = "";
 			});
+			$scope.madLibsForm.$submitted = false;
 			$scope.showMadLibs = false;
 		};
 	})
