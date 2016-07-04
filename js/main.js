@@ -1,13 +1,15 @@
-var isDebug = false;
+var isDebug = true;
 
 angular.module('myApp', ['ngAnimate'])
 	.controller('myController', function myController($scope) {
-		$scope.master = {};
-		$scope.showMadLibs = false;
-		$scope.libs = {};
+		var ctrl = this;
 
-		$scope.gender = "male";
-		$scope.genderText = {
+		ctrl.master = {};
+		ctrl.showMadLibs = false;
+		ctrl.libs = {};
+
+		ctrl.gender = "male";
+		ctrl.genderText = {
 			male: {
 				hisHer: 'his',
 				heShe: 'he',
@@ -20,33 +22,33 @@ angular.module('myApp', ['ngAnimate'])
 			}
 		};
 		
-		$scope.updateText = function() {
-			$scope.genderTextHisHer = $scope.genderText[$scope.gender]['hisHer'];
-			$scope.genderTextHeShe = $scope.genderText[$scope.gender]['heShe'];
+		ctrl.updateText = function() {
+			ctrl.genderTextHisHer = ctrl.genderText[ctrl.gender]['hisHer'];
+			ctrl.genderTextHeShe = ctrl.genderText[ctrl.gender]['heShe'];
 		}
-		$scope.updateText();
+		ctrl.updateText();
 
-		$scope.submit = function() {
-			if ($scope.madLibsForm.$valid) $scope.showMadLibs = true;
+		ctrl.submit = function() {
+			if ($scope.madLibsForm.$valid) ctrl.showMadLibs = true;
 		};
 
-		$scope.reset = function() {
-			$scope.gender = "male";
-			$scope.updateText();
+		ctrl.reset = function() {
+			ctrl.gender = "male";
+			ctrl.updateText();
 			var input_fields = Array.from(document.getElementsByClassName('input__fields')[0].querySelectorAll('input'));
 			input_fields.forEach(function(el, i) {
-				$scope.libs[el.name] = "";
+				ctrl.libs[el.name] = "";
 			});
-			$scope.madLibsForm.$submitted = false;
-			$scope.showMadLibs = false;
+			ctrl.madLibsForm.$submitted = false;
+			ctrl.showMadLibs = false;
 			if (isDebug) debug();
 		};
 
 		function debug() {
-			$scope.genderTextMaleFemaleName = 'TEST';
+			ctrl.genderTextMaleFemaleName = 'TEST';
 			var input_fields = Array.from(document.getElementsByClassName('input__fields')[0].querySelectorAll('input'));
 			input_fields.forEach(function(el, i) {
-				$scope.libs[el.name] = "TEST";
+				ctrl.libs[el.name] = "TEST";
 			});					
 		}
 
