@@ -1,4 +1,4 @@
-var isDebug = true;
+var isDebug = false;
 
 angular.module('myApp', ['ngAnimate'])
 	.controller('myController', function myController($scope) {
