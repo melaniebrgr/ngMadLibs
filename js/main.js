@@ -1,4 +1,4 @@
-var debug = true;
+var isDebug = false;
 
 angular.module('myApp', ['ngAnimate'])
 	.controller('myController', function myController($scope) {
@@ -39,7 +39,7 @@ angular.module('myApp', ['ngAnimate'])
 			});
 			$scope.madLibsForm.$submitted = false;
 			$scope.showMadLibs = false;
-			if (debug) debug();
+			if (isDebug) debug();
 		};
 
 		function debug() {
@@ -50,7 +50,7 @@ angular.module('myApp', ['ngAnimate'])
 			});					
 		}
 
-		if (debug) debug();
+		if (isDebug) debug();
 	})
 	.constant('VERSION', 1.0)
 	.run(function(VERSION, $rootScope) {
